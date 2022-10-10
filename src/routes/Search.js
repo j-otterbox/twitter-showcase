@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Tweet from "../components/Tweet";
 
 const Search = () => {
   return (
@@ -19,6 +20,7 @@ const Search = () => {
           it look interesting!
         </li>
       </ul>
+      <Tweet />
     </Fragment>
   );
 };
