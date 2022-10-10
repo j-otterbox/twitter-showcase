@@ -1,12 +1,18 @@
 import { Outlet } from "react-router-dom";
+import { Container, Row } from "react-bootstrap";
+import ProjectHeader from "../components/ProjectHeader";
 
 const Root = () => {
   return (
     <main>
-      <h1>This is the root which wraps all content</h1>
-      <div id="detail">
-        <Outlet />
-      </div>
+      <Container>
+        <Row>
+          <ProjectHeader />
+          <div id="detail">
+            <Outlet />
+          </div>
+        </Row>
+      </Container>
     </main>
   );
 };
