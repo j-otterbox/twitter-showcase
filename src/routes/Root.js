@@ -1,13 +1,15 @@
 import { Outlet } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
-import ProjectHeader from "../components/ProjectHeader";
+import MainNavbar from "../components/MainNavbar";
+import MainHeader from "../components/MainHeader";
 
 const Root = () => {
   return (
     <main>
+      <MainNavbar />
       <Container>
         <Row>
-          <ProjectHeader />
+          <MainHeader />
           <div id="detail">
             <Outlet />
           </div>

@@ -1,4 +1,4 @@
-const ProjectHeader = () => {
+const MainHeader = () => {
   return (
     <header>
       <h1>Twitter Showcase</h1>
@@ -7,4 +7,4 @@ const ProjectHeader = () => {
   );
 };
 
-export default ProjectHeader;
+export default MainHeader;
