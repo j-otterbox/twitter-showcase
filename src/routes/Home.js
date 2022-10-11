@@ -1,9 +1,11 @@
 import { Fragment } from "react";
+import cats from "../assets/cats-typing.gif";
 
 const Home = () => {
   return (
     <Fragment>
       <h2>This is the HOME page.</h2>
+      <img src={cats} alt="Montage of cats typing furiously at computers"></img>
       <ul>
         <li>
           Contains a message that explains what the app is. It should explain
