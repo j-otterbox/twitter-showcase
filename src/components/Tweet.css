@@ -1,4 +1,6 @@
 .tweet {
-  background: #dcdde1;
+  background: #fff;
   color: #2f3640;
+  padding: 16px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }

@@ -1,8 +1,10 @@
+import "./MainHeader.css";
+
 const MainHeader = () => {
   return (
-    <header>
+    <header className="main-header">
       <h1>Twitter Showcase</h1>
-      <h4>Built with React.js</h4>
+      <h4>Find tweets from your favorite users!</h4>
     </header>
   );
 };
