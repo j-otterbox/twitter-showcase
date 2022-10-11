@@ -2,7 +2,6 @@ body {
   background: #3742fa;
   background-image: url("./assets/inspiration-geometry.png");
   background-repeat: repeat;
-  min-height: 100vh;
   color: #fff;
   font-family: "Nunito", sans-serif;
 }
@@ -14,4 +13,14 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-footer {
+  margin-top: auto;
 }
