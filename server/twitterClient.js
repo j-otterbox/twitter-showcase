@@ -17,7 +17,11 @@ exports.get = async (params, searchType) => {
     .then((resp) => resp)
     .catch((err) => err.response);
 
-  response.data = formatSearchResponse(response, searchType);
+  // format successful request, return error response as is
+  if (response.status === 200) {
+    response.data = formatSearchResponse(response, searchType);
+  }
+
   return response;
 };
 
