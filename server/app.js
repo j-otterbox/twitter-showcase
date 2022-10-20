@@ -1,108 +1,130 @@
 const express = require("express");
-// const path = require("path");
-const axios = require("axios");
-require("dotenv").config();
+const path = require("path");
+const twitterClient = require("./twitterAPIClient");
 
 const app = express();
 
-// ! FOR PRODUCTION
+// ! PRODUCTION
 // app.use("/", express.static(path.join(__dirname, "client/build")));
 
-// TODO: build out endpoints that are going to make requests to the twitter API
-// // ! #1: search based on user name
-// ! #2: search based on content (keyword search)
-// ! #3: get a random tweet (most recent?) from a list of predetermined users
-
-const client = axios.create({
-  baseURL: "https://api.twitter.com/2/tweets/search/",
-  timeout: 1000,
-  headers: {
-    "User-Agent": "v2RecentSearchJS",
-    authorization: `Bearer ${process.env.API_TOKEN}`,
-  },
-});
-
 app.get("/", function (req, res) {
-  res.send("<h1>Twitter Showcase API</h1>");
+  res.status(200).json({
+    status: 200,
+    statusTxt: "OK",
+    info: {
+      text: "There are three endpoints available for use in this API.",
+      examples: {
+        keywords: "/search?keywords=${keywords_here}",
+        search: "/search?username=${username_here}",
+        random: "/random?username=${username_here}",
+      },
+    },
+  });
 });
 
 app.get("/api/tweets/search", async function (req, res) {
   if (Object.keys(req.query).length === 0) {
     res.status(200).json({
-      response: {
-        info: "The search endpoint requires additional parameters.",
+      status: 200,
+      statusTxt: "OK",
+      info: {
+        text: "The search endpoint requires additional parameters.",
         examples: {
           username: "/search?username=${username_here}",
           keywords: "/search?keywords=${keywords_here}",
         },
       },
-      status: 200,
     });
   } else if (req.query.username) {
     const username = req.query.username;
     const isValidTwitterHandle = /^(\w){1,15}$/.test(username);
 
     if (isValidTwitterHandle) {
-      const query = `recent?expansions=author_id,attachments.media_keys&user.fields=description,name,profile_image_url,public_metrics,username,verified&query=from:${username}&media.fields=preview_image_url,url`;
-
-      const response = await client
-        .get(query)
-        .then((resp) => resp)
-        .catch((err) => err.response);
+      const response = await twitterClient.get(username, "username");
 
       if (response.status === 200) {
-        res.status(200).json(response.data);
+        res
+          .status(200)
+          .json({ status: 200, statusTxt: "OK", data: response.data });
       } else if (response.status === 400) {
-        res.status(400).json({ errorMsg: "Bad Request", status: 400 });
+        res.status(400).json({ status: 400, statusTxt: "Bad Request" });
       } else if (response.status === 404) {
-        res.status(404).json({ errorMsg: "Not Found", status: 404 });
+        res.status(404).json({ status: 404, statusTxt: "Not Found" });
       }
     } else {
-      // username is too long, improper characters, etc.
-      res.status(400).json({ errorMsg: "Bad Request", status: 400 });
+      res.status(400).json({ status: 400, statusTxt: "Bad Request" });
     }
   } else if (req.query.keywords) {
     const keywords = encodeURIComponent(req.query.keywords);
-    const query = `recent?expansions=author_id,attachments.media_keys&user.fields=description,name,profile_image_url,public_metrics,username,verified&query=${keywords}&media.fields=preview_image_url,url`;
-
-    const response = await client
-      .get(query)
-      .then((resp) => resp)
-      .catch((err) => err.response);
+    const response = await twitterClient.get(keywords, "keywords");
 
     if (response.status === 200) {
-      res.status(200).json(response.data);
+      res
+        .status(200)
+        .json({ status: 200, statusTxt: "OK", data: response.data });
     } else if (response.status === 400) {
-      res.status(400).json({ errorMsg: "Bad Request", status: 400 });
+      res.status(400).json({ status: 400, statusTxt: "Bad Request" });
     } else if (response.status === 404) {
-      res.status(404).json({ errorMsg: "Not Found", status: 404 });
+      res.status(404).json({ status: 404, statusTxt: "Not Found" });
     }
   } else {
-    res.status(400).json({ errorMsg: "Bad Request", status: 400 });
+    res.status(400).json({ status: 400, statusTxt: "Bad Request" });
   }
 });
 
-app.get("/api/tweets/random/:username", function (req, res) {
-  const validTwitterHandles = [
-    "barackObama",
-    "justinbieber",
-    "elonmusk",
-    "katyperry",
-    "rihanna",
-  ];
+app.get("/api/tweets/random", async function (req, res) {
+  if (Object.keys(req.query).length === 0) {
+    res.status(200).json({
+      status: 200,
+      statusTxt: "OK",
+      info: {
+        text: "The random endpoint requires an additional parameter and only accepts a small list of usernames.",
+        examples: {
+          username: "/random?username=${username_here}",
+        },
+      },
+    });
+  } else if (req.query.username) {
+    const username = req.query.username.toLowerCase();
+    const validTwitterHandles = [
+      "barackobama",
+      "justinbieber",
+      "elonmusk",
+      "katyperry",
+      "rihanna",
+    ];
 
-  // if (validTwitterHandles.includes(req.params.username.toLowerCase())) {
-  //   res.status(200).json({ successMsg: "ok username received", status: 200 });
-  // } else {
-  //   res.status(400).json({ errorMsg: "Bad Request", status: 400 });
-  // }
-
-  res.status(200).json(req.params);
+    if (validTwitterHandles.includes(username)) {
+      const response = await twitterClient.get(username, "random");
+      if (response.status === 200) {
+        res.status(200).json({ status: 200, statusTxt: "OK", data: response });
+      } else if (response.status === 400) {
+        res.status(400).json({ status: 400, statusTxt: "Bad Request" });
+      } else if (response.status === 404) {
+        res.status(404).json({ status: 404, statusTxt: "Not Found" });
+      }
+    } else {
+      res.status(400).json({ status: 400, statusTxt: "Bad Request" });
+    }
+  } else {
+    res.status(400).json({ status: 400, statusTxt: "Bad Request" });
+  }
 });
 
 // 404
 app.use((req, res) => {
-  res.status(404).send("<h1>404 | Not found</h1>");
+  res.status(404).json({
+    info: {
+      text: "There are three endpoints available for use in this API.",
+      examples: {
+        keywords: "/search?keywords=${keywords_here}",
+        search: "/search?username=${username_here}",
+        random: "/random?username=${username_here}",
+      },
+    },
+    status: 404,
+    statusTxt: "Not Found",
+  });
 });
 
 app.listen(3080);
