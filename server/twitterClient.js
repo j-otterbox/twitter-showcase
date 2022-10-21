@@ -27,9 +27,9 @@ exports.get = async (params, searchType) => {
 
 const getQueryString = (params, searchType) => {
   if (searchType === "username" || searchType === "random") {
-    return `recent?query=from:${params}&expansions=author_id,attachments.media_keys&user.fields=description,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,public_metrics&media.fields=preview_image_url,url`;
+    return `recent?query=from:${params}&expansions=author_id,attachments.media_keys&user.fields=created_at,description,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,public_metrics&media.fields=preview_image_url,url`;
   } else if (searchType === "keywords") {
-    return `recent?query=${params}&expansions=author_id,attachments.media_keys&user.fields=description,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,public_metrics&media.fields=preview_image_url,url`;
+    return `recent?query=${params}&expansions=author_id,attachments.media_keys&user.fields=created_at,description,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,public_metrics&media.fields=preview_image_url,url`;
   }
 };
 
@@ -50,9 +50,12 @@ const formatSearchResponse = (twitterAPIResponse, searchType) => {
     };
 
     if (searchType === "keywords") {
+      // bundle account data w/ each individual tweet
       newTweet = {
         ...newTweet,
-        ...includes.users.find((user) => user.id === tweet.author_id), // bundle account data w/ each individual tweet
+        account: {
+          ...includes.users.find((user) => user.id === tweet.author_id),
+        },
       };
     }
 
