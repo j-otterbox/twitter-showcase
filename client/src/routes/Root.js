@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import MainNavbar from "../components/MainNavbar";
 import MainHeader from "../components/MainHeader";
 import MainFooter from "../components/MainFooter";
@@ -14,9 +14,11 @@ const Root = () => {
       <main className="main__root">
         <Container>
           <Row>
-            <div id="detail">
-              <Outlet />
-            </div>
+            <Col lg={8}>
+              <div id="detail">
+                <Outlet />
+              </div>
+            </Col>
           </Row>
         </Container>
       </main>

@@ -97,7 +97,9 @@ app.get("/api/tweets/random", async function (req, res) {
     if (validTwitterHandles.includes(username)) {
       const response = await twitterClient.get(username, "random");
       if (response.status === 200) {
-        res.status(200).json({ status: 200, statusTxt: "OK", data: response });
+        res
+          .status(200)
+          .json({ status: 200, statusTxt: "OK", data: response.data });
       } else if (response.status === 400) {
         res.status(400).json({ status: 400, statusTxt: "Bad Request" });
       } else if (response.status === 404) {
