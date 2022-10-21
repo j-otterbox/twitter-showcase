@@ -25,7 +25,9 @@ const Search = () => {
           it look interesting!
         </li>
       </ul>
-      <Tweet data={fakeResponse.data.tweets[0]}></Tweet>
+      {fakeResponse.data.tweets.map((tweet) => {
+        return <Tweet data={tweet} />;
+      })}
     </Fragment>
   );
 };
