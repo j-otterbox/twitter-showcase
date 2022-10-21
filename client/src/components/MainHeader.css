@@ -1,3 +1,5 @@
-.main-header {
+.header__main {
   text-align: center;
+  /* space between navbar and header */
+  margin: 80px 0 40px 0;
 }

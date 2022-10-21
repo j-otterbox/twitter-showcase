@@ -1,0 +1,17 @@
+.row__home {
+  justify-content: center;
+}
+
+.col__home {
+  display: flex;
+  flex-direction: column;
+}
+
+.img__home {
+  align-self: center;
+  margin-bottom: 54px;
+}
+
+.text-block__home:not(:last-of-type) {
+  margin-bottom: 48px;
+}
