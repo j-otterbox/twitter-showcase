@@ -44,6 +44,7 @@ const formatSearchResponse = (twitterAPIResponse, searchType) => {
 
   formattedResponse.tweets = data.map((tweet) => {
     let newTweet = {
+      id: tweet.id,
       created_at: tweet.created_at,
       text: tweet.text,
       public_metrics: tweet.public_metrics,
