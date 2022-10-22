@@ -7,6 +7,7 @@ const Tweet = (props) => {
   const timeSinceTweeted = formatDistanceToNowStrict(tweetCreateDate, {
     unit: "minute" | "second" | "hour" | "day" | "month" | "year",
   });
+  const displayDate = format(tweetCreateDate, "h:m aa MMM d, yyyy");
 
   const accountCreateDate = new Date(props.data.account.created_at);
   const joinDate = format(accountCreateDate, "MMMM yyyy");
@@ -58,6 +59,10 @@ const Tweet = (props) => {
             })}
 
             <ul className="tweet__stats">
+              <li>
+                <span class="icon material-symbols-outlined">schedule</span>
+                {displayDate}
+              </li>
               <li>
                 <span className="icon material-symbols-outlined">
                   chat_bubble
