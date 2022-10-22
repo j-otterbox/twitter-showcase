@@ -26,7 +26,7 @@ const Search = () => {
         </li>
       </ul>
       {fakeResponse.data.tweets.map((tweet) => {
-        return <Tweet data={tweet} />;
+        return <Tweet key={tweet.id} data={tweet} />;
       })}
     </Fragment>
   );
