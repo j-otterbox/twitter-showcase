@@ -23,6 +23,7 @@ const Random = () => {
 
   const onGetTweetBtnClick = (name) => {
     console.log("get a random tweet from", name);
+    setModalShow(true);
   };
 
   return (
