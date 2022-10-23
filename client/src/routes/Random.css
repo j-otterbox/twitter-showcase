@@ -1,0 +1,32 @@
+.random__row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.random__text-block:not(:last-of-type) {
+  margin-bottom: 48px;
+}
+
+.random__profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.random__profile-card img {
+  margin-bottom: 16px;
+}
+
+.icon {
+  display: "inline-block";
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 575px) {
+  .random__profile-card img {
+    width: 50%;
+  }
+}

@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
 import MainNavbar from "../components/MainNavbar";
 import MainHeader from "../components/MainHeader";
 import MainFooter from "../components/MainFooter";
@@ -12,15 +11,9 @@ const Root = () => {
       <MainNavbar />
       <MainHeader />
       <main className="main__root">
-        <Container>
-          <Row>
-            <Col lg={8}>
-              <div id="detail">
-                <Outlet />
-              </div>
-            </Col>
-          </Row>
-        </Container>
+        <div id="detail">
+          <Outlet />
+        </div>
       </main>
       <MainFooter></MainFooter>
     </Fragment>
