@@ -2,6 +2,10 @@ import { Image, Button } from "react-bootstrap";
 import "./ProfileCard.css";
 
 const ProfileCard = (props) => {
+  const getTweetBtnHandler = (name) => {
+    props.onGetTweetBtnClick(name);
+  };
+
   return (
     <div className="random__profile-card">
       <h4>
@@ -14,7 +18,11 @@ const ProfileCard = (props) => {
         src={props.data.src}
         alt="Twitter Profile Image"
       />
-      <Button size="lg" variant="success">
+      <Button
+        size="lg"
+        variant="success"
+        onClick={() => getTweetBtnHandler(props.data.name)}
+      >
         Get Tweet
       </Button>
     </div>

@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import SearchInput from "../components/SearchInput";
+import "./Search.css";
 // import Tweet from "../components/Tweet";
 // import fakeResponse from "../keywords-search-data";
 
@@ -8,7 +9,7 @@ import SearchInput from "../components/SearchInput";
 const Search = () => {
   return (
     <Container>
-      <Row>
+      <Row className="search__row">
         <Col lg={8}>
           <SearchInput />
           <h2>This is the Search page.</h2>
@@ -28,8 +29,8 @@ const Search = () => {
             </li>
           </ul>
           {/* {fakeResponse.data.tweets.map((tweet) => {
-        return <Tweet key={tweet.id} data={tweet} />;
-      })} */}
+            return <Tweet key={tweet.id} data={tweet} />;
+          })} */}
         </Col>
       </Row>
     </Container>
