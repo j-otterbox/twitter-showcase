@@ -6,15 +6,15 @@ import "./Home.css";
 const Home = () => {
   return (
     <Container>
-      <Row>
-        <Col lg={8}>
+      <Row className="home__row">
+        <Col lg={8} className="home__col">
           <Image
             src={cats}
             alt="Montage of cats typing furiously at computers"
             fluid="true"
-            className="img__home"
+            className="home__img"
           />
-          <div className="text-block__home">
+          <div className="home__text-block">
             <h2>What exactly is this app?</h2>
             <p>
               If you want to get small doses of Twitter as Elon Musk works
@@ -24,7 +24,7 @@ const Home = () => {
               too much because I only get 500k tweets per month.
             </p>
           </div>
-          <div className="text-block__home">
+          <div className="home__text-block">
             <h2>How do I use the app?</h2>
             <p>
               Head over to the search page and follow the instructions there to

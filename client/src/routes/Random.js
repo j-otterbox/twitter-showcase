@@ -18,13 +18,13 @@ const users = [
 const Random = () => {
   return (
     <Container>
-      <Row>
+      <Row className="random__row">
         <Col lg={8}>
           <div className="random__text-block">
             <h2>Random Tweets</h2>
             <p>
               According to Wikipedia, these are the most followed people on
-              twitter. Click on the button below each picture to pull up a
+              Twitter. Click on the button below each picture to pull up a
               random tweet from that user.
             </p>
           </div>

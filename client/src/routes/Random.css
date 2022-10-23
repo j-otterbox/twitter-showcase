@@ -4,6 +4,14 @@
   align-items: flex-end;
 }
 
+.random__row:first-of-type {
+  margin-bottom: 48px;
+}
+
+.random__text-block > h2 {
+  text-align: center;
+}
+
 .random__text-block:not(:last-of-type) {
   margin-bottom: 48px;
 }

@@ -1,17 +1,22 @@
-.row__home {
+.home__row {
+  display: flex;
   justify-content: center;
 }
 
-.col__home {
+.home__col {
   display: flex;
   flex-direction: column;
 }
 
-.img__home {
+.home__img {
   align-self: center;
   margin-bottom: 54px;
 }
 
-.text-block__home:not(:last-of-type) {
+.home__text-block > h2 {
+  text-align: center;
+}
+
+.home__text-block:not(:last-of-type) {
   margin-bottom: 48px;
 }
