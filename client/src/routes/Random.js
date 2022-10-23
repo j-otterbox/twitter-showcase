@@ -1,10 +1,19 @@
-import { Image, Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import ProfileCard from "../components/ProfileCard";
 import obamaProfile from "../assets/profiles/barack_obama_profile.jpeg";
-import elonProfile from "../assets/profiles/elon_musk_profile.jpg";
 import justinProfile from "../assets/profiles/justin_bieber_profile.jpg";
+import elonProfile from "../assets/profiles/elon_musk_profile.jpg";
 import katyProfile from "../assets/profiles/katy_perry_profile.jpeg";
 import rihannaProfile from "../assets/profiles/rihanna_profile.jpeg";
 import "./Random.css";
+
+const users = [
+  { name: "Barack Obama", src: obamaProfile },
+  { name: "Justin Bieber", src: justinProfile },
+  { name: "Elon Musk", src: elonProfile },
+  { name: "Katy Perry", src: katyProfile },
+  { name: "Rihanna", src: rihannaProfile },
+];
 
 const Random = () => {
   return (
@@ -22,91 +31,13 @@ const Random = () => {
         </Col>
       </Row>
       <Row className="random__row">
-        <Col md={4} className="random__profile-card">
-          <h4>
-            Barack Obama
-            <span className="icon material-symbols-outlined">verified</span>
-          </h4>
-          <Image
-            fluid={true}
-            roundedCircle={true}
-            src={obamaProfile}
-            alt="Barack Obama's Twitter Profile Image"
-          />
-          <Button size="lg" variant="success">
-            Get Tweet
-          </Button>
-        </Col>
-        <Col md={4} className="random__profile-card">
-          <h4>
-            Justin Bieber
-            <span className="icon material-symbols-outlined">verified</span>
-          </h4>
-          <Image
-            fluid={true}
-            roundedCircle={true}
-            src={justinProfile}
-            alt="Justin Bieber's Twitter Profile Image"
-          />
-          <Button size="lg" variant="success">
-            Get Tweet
-          </Button>
-        </Col>
-        <Col md={4} className="random__profile-card">
-          <h4>
-            Elon Musk
-            <span className="icon material-symbols-outlined">verified</span>
-          </h4>
-          <Image
-            fluid={true}
-            roundedCircle={true}
-            src={elonProfile}
-            alt="Elon Musk's Twitter Profile Image"
-          />
-          <Button size="lg" variant="success">
-            Get Tweet
-          </Button>
-        </Col>
-        <Col md={4} className="random__profile-card">
-          <h4>
-            Katy Perry
-            <span className="icon material-symbols-outlined">verified</span>
-          </h4>
-          <Image
-            fluid={true}
-            roundedCircle={true}
-            src={katyProfile}
-            alt="Katy Perry's Twitter Profile Image"
-          />
-          <Button size="lg" variant="success">
-            Get Tweet
-          </Button>
-        </Col>
-        <Col md={4} className="random__profile-card">
-          <h4>
-            Rihanna
-            <span className="icon material-symbols-outlined">verified</span>
-          </h4>
-          <Image
-            fluid={true}
-            roundedCircle={true}
-            src={rihannaProfile}
-            alt="Rihanna Twitter Profile Image"
-          />
-          <Button size="lg" variant="success">
-            Get Tweet
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        {/* <h2>This is the Random page.</h2>
-      <ul>
-        <li>
-          Find 5 of your favorite users on twitter (celebrities, athletes, etc)
-          and when prompted, randomly choose a tweet from any of those five
-          users and display it
-        </li>
-      </ul> */}
+        {users.map((elem) => {
+          return (
+            <Col key={elem.name} md={4}>
+              <ProfileCard data={elem} />
+            </Col>
+          );
+        })}
       </Row>
     </Container>
   );
