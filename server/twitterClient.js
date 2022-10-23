@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { response } = require("express");
 require("dotenv").config();
 
 const client = axios.create({
@@ -25,12 +26,45 @@ exports.get = async (params, searchType) => {
   return response;
 };
 
+exports.getRandom = async () => {
+  const accounts = [
+    "barackobama",
+    "cristiano",
+    "elonmusk",
+    "katyperry",
+    "rihanna",
+  ];
+
+  const responseArray = await Promise.all(
+    accounts.map(async (elem) => {
+      const query = getQueryString(elem, "username");
+
+      const response = await client
+        .get(query)
+        .then((resp) => resp)
+        .catch((err) => err.response);
+
+      if (response.status === 200) {
+        return formatSearchResponse(response, "username");
+      } else {
+        return {}; // for everything else
+      }
+    })
+  );
+
+  return responseArray;
+};
+
 const getQueryString = (params, searchType) => {
-  if (searchType === "username" || searchType === "random") {
-    return `recent?query=from:${params}&expansions=author_id,attachments.media_keys&user.fields=created_at,description,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,public_metrics&media.fields=preview_image_url,url`;
+  let query;
+
+  if (searchType === "username") {
+    query = `from:${params}`;
   } else if (searchType === "keywords") {
-    return `recent?query=${params}&expansions=author_id,attachments.media_keys&user.fields=created_at,description,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,public_metrics&media.fields=preview_image_url,url`;
+    query = encodeURIComponent(params);
   }
+
+  return `recent?query=${query}&expansions=author_id,attachments.media_keys&user.fields=created_at,description,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,public_metrics&media.fields=preview_image_url,url`;
 };
 
 const formatSearchResponse = (twitterAPIResponse, searchType) => {
@@ -73,19 +107,12 @@ const formatSearchResponse = (twitterAPIResponse, searchType) => {
     return newTweet;
   });
 
-  // reduce response size by attaching account data separately when only one user's tweets are returned
-  if (searchType === "username" || searchType === "random") {
+  // reduce response size by attaching account data
+  // separately when only one user's tweets are returned
+  if (searchType === "username") {
     formattedResponse.account = {
       ...includes.users[0],
     };
-
-    // return a single tweet when getting a random tweet
-    if (searchType === "random") {
-      const randIndex = Math.floor(
-        Math.random() * formattedResponse.tweets.length
-      );
-      formattedResponse.tweets = [formattedResponse.tweets[randIndex]]; // return as array for consistency
-    }
   }
 
   return formattedResponse;
