@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Modal from "../components/Modal";
 import ProfileCard from "../components/ProfileCard";
 import obamaProfile from "../assets/profiles/barack_obama_profile.jpeg";
-import justinProfile from "../assets/profiles/justin_bieber_profile.jpg";
+import cristianoProfile from "../assets/profiles/cristiano_ronaldo_profile.jpeg";
 import elonProfile from "../assets/profiles/elon_musk_profile.jpg";
 import katyProfile from "../assets/profiles/katy_perry_profile.jpeg";
 import rihannaProfile from "../assets/profiles/rihanna_profile.jpeg";
@@ -12,7 +12,7 @@ import "./Random.css";
 
 const users = [
   { name: "Barack Obama", src: obamaProfile },
-  { name: "Justin Bieber", src: justinProfile },
+  { name: "Cristiano Ronaldo", src: cristianoProfile },
   { name: "Elon Musk", src: elonProfile },
   { name: "Katy Perry", src: katyProfile },
   { name: "Rihanna", src: rihannaProfile },
@@ -23,7 +23,7 @@ console.log("hello im outside the random page");
 const Random = () => {
   console.log("loading the random page");
   const [modalShow, setModalShow] = useState(false);
-  const [randomTweets] = useState([]);
+  // const [randomTweets] = useState([]);
 
   useEffect(() => {
     // todo: basically do the same thing as with the star wars app,
