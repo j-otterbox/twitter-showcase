@@ -1,0 +1,52 @@
+.random-tweet-modal__title {
+  display: flex;
+  align-items: center;
+}
+
+.random-tweet-modal-title__img {
+  margin-right: 16px;
+}
+
+.random-tweet-modal-title__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.random-tweet-modal-title__header {
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.random-tweet-modal-title__name,
+.random-tweet-modal-title__username,
+.random-tweet-modal-title__date {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.random-tweet-modal-title__username,
+.random-tweet-modal-title__date {
+  color: #596275;
+  font-size: 1.2rem;
+}
+
+.random-tweet-modal-title__date {
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 575px) {
+  .random-tweet-modal-title__container .icon {
+    font-size: 1.1rem;
+  }
+
+  .random-tweet-modal-title__header {
+    font-size: 1rem;
+  }
+
+  .random-tweet-modal-title__username,
+  .random-tweet-modal-title__date {
+    font-size: 0.9rem;
+  }
+}

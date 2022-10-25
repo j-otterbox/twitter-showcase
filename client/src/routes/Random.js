@@ -1,5 +1,6 @@
 import { useState, useEffect, Fragment } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import LoadingOverlay from "../components/LoadingOverlay";
 import RandomTweetModal from "../components/RandomTweetModal";
 import ProfileCard from "../components/ProfileCard";
 import obamaProfile from "../assets/profiles/barack_obama_profile.jpeg";
@@ -25,6 +26,7 @@ const client = axios.create({
 
 const Random = () => {
   console.log("loading the random page");
+  const [isLoading, setIsLoading] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const [randomTweets, setRandomTweets] = useState([]);
   const [selectedTweet, setTweet] = useState(null);
@@ -38,6 +40,7 @@ const Random = () => {
 
     if (!cache || isExpired(cache)) {
       // create a new cache
+      setIsLoading(true);
       const response = await client
         .get("/api/tweets/random")
         .then((resp) => resp)
@@ -52,6 +55,7 @@ const Random = () => {
     }
 
     setRandomTweets(cache);
+    setIsLoading(false);
   };
 
   const onGetTweetBtnClick = (username) => {
@@ -108,6 +112,7 @@ const Random = () => {
           onHide={() => setModalShow(false)}
         />
       )}
+      <LoadingOverlay isLoading={isLoading} />
     </Fragment>
   );
 };

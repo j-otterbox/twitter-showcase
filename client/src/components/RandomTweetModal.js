@@ -1,16 +1,24 @@
 import { Fragment } from "react";
+import ReactDOM from "react-dom";
 import { Button, Modal, Image } from "react-bootstrap";
+import RandomTweetModalTitle from "./RandomTweetModalTitle";
 import TweetMetrics from "./TweetMetrics";
 import { format, formatDistanceToNowStrict } from "date-fns";
 import "./RandomTweetModal.css";
 
-import ReactDOM from "react-dom";
-
 const RandomTweetModal = (props) => {
   const tweetCreateDate = new Date(props.data.created_at);
-  const timeSinceCreated = formatDistanceToNowStrict(tweetCreateDate, {
+  const timeSinceTweetCreated = formatDistanceToNowStrict(tweetCreateDate, {
     unit: "minute" | "second" | "hour" | "day" | "month" | "year",
   });
+
+  const titleData = {
+    name: props.data.account.name,
+    username: props.data.account.username,
+    profileImageUrl: props.data.account.profile_image_url,
+    timeSinceTweetCreated,
+  };
+
   const tweetMetrics = {
     displayDate: format(tweetCreateDate, "h:mm aa MMM d, yyyy"),
     ...props.data.public_metrics,
@@ -26,21 +34,7 @@ const RandomTweetModal = (props) => {
           centered
         >
           <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-              <Image
-                src={props.data.account.profile_image_url}
-                alt="Twitter Account Profile Image"
-                roundedCircle={true}
-              />
-              <h4>
-                {props.data.account.name}
-                <span className="tweet__username">
-                  @{props.data.account.username}
-                </span>
-                &middot;
-                <span className="tweet__date">{timeSinceCreated} ago</span>
-              </h4>
-            </Modal.Title>
+            <RandomTweetModalTitle data={titleData} />
           </Modal.Header>
           <Modal.Body>
             <p>{props.data.text}</p>

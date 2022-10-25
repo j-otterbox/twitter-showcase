@@ -1,8 +1,29 @@
 .tweet__metrics {
+  margin-top: 1rem;
   padding-left: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tweet__metrics > li {
   display: inline-block;
+  font-size: 0.9rem;
   font-weight: 700;
+}
+
+.tweet__metrics .icon {
+  margin-right: 4px;
+  font-size: 1.2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 575px) {
+  .tweet__metrics > li {
+    font-size: 0.75rem;
+  }
+
+  .tweet__metrics .icon {
+    font-size: 1rem;
+  }
 }
