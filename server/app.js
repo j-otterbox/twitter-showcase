@@ -1,8 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 const twitterClient = require("./twitterClient");
 
 const app = express();
+app.use(cors());
 
 // ! PRODUCTION
 // app.use("/", express.static(path.join(__dirname, "client/build")));

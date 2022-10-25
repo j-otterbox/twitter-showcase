@@ -1,5 +1,5 @@
 export function getCache() {
-  return JSON.parse(localStorage.getItem("randomTweet"));
+  return JSON.parse(localStorage.getItem("randomTweets"));
 }
 
 export function refreshCache(data) {
@@ -7,12 +7,12 @@ export function refreshCache(data) {
     data,
     expirationDate: getExpirationDate(),
   };
-  localStorage.setItem("randomTweet", JSON.stringify(newCache));
+  localStorage.setItem("randomTweets", JSON.stringify(newCache));
 }
 
 function getExpirationDate() {
   const today = new Date();
-  return new Date(today.setDate(today.getDate() + 1)); // expires in 24hrs
+  return new Date(today.setDate(today.getDate() + 3)); // expires in 72hrs
 }
 
 export function isExpired(date) {

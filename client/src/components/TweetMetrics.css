@@ -1,0 +1,8 @@
+.tweet__metrics {
+  padding-left: 0;
+}
+
+.tweet__metrics > li {
+  display: inline-block;
+  font-weight: 700;
+}

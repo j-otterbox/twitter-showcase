@@ -1,9 +1,17 @@
+import { useRef } from "react";
 import { Image, Button } from "react-bootstrap";
 import "./ProfileCard.css";
 
 const ProfileCard = (props) => {
-  const getTweetBtnHandler = (name) => {
-    props.onGetTweetBtnClick(name);
+  const getTweetBtn = useRef(null);
+
+  const handleFocus = () => {
+    getTweetBtn.current.blur(); // removing focus
+  };
+
+  const getTweetBtnHandler = (username) => {
+    props.onGetTweetBtnClick(username);
+    handleFocus();
   };
 
   return (
@@ -19,9 +27,10 @@ const ProfileCard = (props) => {
         alt="Twitter Profile Image"
       />
       <Button
+        ref={getTweetBtn}
         size="lg"
         variant="success"
-        onClick={() => getTweetBtnHandler(props.data.name)}
+        onClick={() => getTweetBtnHandler(props.data.username)}
       >
         Get Tweet
       </Button>
