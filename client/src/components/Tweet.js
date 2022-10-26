@@ -1,8 +1,8 @@
 import { Image, Container, Row, Col } from "react-bootstrap";
-import { format, formatDistanceToNowStrict } from "date-fns";
-import "./Tweet.css";
 import TweetMetrics from "./TweetMetrics";
 import AccountMetrics from "./AccountMetrics";
+import { format, formatDistanceToNowStrict } from "date-fns";
+import "./Tweet.css";
 
 const Tweet = (props) => {
   const tweetCreateDate = new Date(props.data.created_at);
