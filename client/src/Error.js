@@ -8,7 +8,7 @@ const Error = () => {
     <Fragment>
       <h2>Uh-oh, looks like there was an error!</h2>
       <h3>
-        {error.status} | {error.statusText}{" "}
+        {error.status} | {error.statusText}
       </h3>
     </Fragment>
   );
