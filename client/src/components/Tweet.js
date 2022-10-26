@@ -21,42 +21,62 @@ const Tweet = (props) => {
   };
 
   return (
-    <Container className="tweet">
+    <Container>
       <Row>
-        <Col sm={1}>
+        <Col className="tweet__col">
           <Image
             src={props.data.account.profile_image_url}
             alt="Twitter Account Profile Image"
             roundedCircle={true}
+            className="tweet__profile-image"
           />
-        </Col>
-        <Col sm={11}>
-          <h4>
-            {props.data.account.name}
-            <span className="tweet__username">
-              @{props.data.account.username}
-            </span>
-            &middot;
-            <span className="tweet__date">{timeSinceCreated} ago</span>
-          </h4>
-          <p>{props.data.account.description}</p>
+          <div className="tweet__content">
+            <div className="tweet__header">
+              <div className="tweet__header-title">
+                <h4>
+                  <span className="tweet__name">
+                    {props.data.account.name}
+                    <span className="material-symbols-outlined">verified</span>
+                  </span>
+                  <span className="tweet__username">
+                    <a
+                      href={`https://twitter.com/${props.data.account.username}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      @{props.data.account.username}
+                    </a>
+                  </span>
+                </h4>
+                <span className="tweet__date">
+                  <span className="material-symbols-outlined">history</span>
+                  {timeSinceCreated} ago
+                </span>
+              </div>
 
-          <AccountMetrics data={accountMetrics} />
+              {props.data.account.description && (
+                <p>{props.data.account.description}</p>
+              )}
 
-          <p>{props.data.text}</p>
+              <AccountMetrics page="search" data={accountMetrics} />
+            </div>
+            <div className="tweet__body">
+              <p>{props.data.text}</p>
 
-          {props.data.media?.map((elem) => {
-            return (
-              <Image
-                key={elem.media_key}
-                src={elem.preview_image_url || elem.url}
-                alt="Tweet Media"
-                fluid={true}
-              />
-            );
-          })}
+              {props.data.media?.map((elem) => {
+                return (
+                  <Image
+                    key={elem.media_key}
+                    src={elem.preview_image_url || elem.url}
+                    alt="Tweet Media"
+                    fluid={true}
+                  />
+                );
+              })}
 
-          <TweetMetrics data={tweetMetrics} />
+              <TweetMetrics page="search" data={tweetMetrics} />
+            </div>
+          </div>
         </Col>
       </Row>
     </Container>

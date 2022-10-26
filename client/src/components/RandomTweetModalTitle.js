@@ -20,7 +20,13 @@ const RandomTweetModalTitle = (props) => {
             <span className="icon material-symbols-outlined">verified</span>
           </span>
           <span className="random-tweet-modal-title__username">
-            @{props.data.username}
+            <a
+              href={`https://twitter.com/${props.data.username}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              @{props.data.username}
+            </a>
           </span>
         </h4>
         <span className="random-tweet-modal-title__date">

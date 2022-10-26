@@ -1,17 +1,60 @@
-.tweet {
-  background: #fff;
+.tweet__col {
+  display: flex;
   color: #2f3640;
-  padding: 16px;
+  /* default padding + profile image width + right-margin = 72px */
+  padding: 24px 76px 24px 16px;
+}
+
+.tweet__content {
+  width: 100%;
+}
+
+.tweet__header {
+  margin-bottom: 32px;
+}
+
+.tweet__header-title {
+  margin-bottom: 8px;
+}
+
+.tweet__header-title h4 {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tweet__profile-image {
+  align-self: flex-start;
+  margin-right: 12px;
+}
+
+.tweet__name,
+.tweet__username,
+.tweet__date {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
 }
 
 .tweet__username,
 .tweet__date {
   color: #596275;
-  font-size: 0.9em;
+  font-size: 1.1rem;
+}
+
+.tweet__date {
+  font-weight: 700;
 }
 
 .icon {
   display: inline-block;
   margin-right: 4px;
   vertical-align: middle;
+}
+
+@media only screen and (max-width: 575px) {
+  .tweet__col {
+    padding-right: 16px;
+  }
 }

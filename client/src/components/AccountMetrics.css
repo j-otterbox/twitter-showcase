@@ -1,8 +1,18 @@
 .tweet__account-metrics {
   padding-left: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tweet__account-metrics > li {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
   font-weight: 700;
+}
+
+@media screen and (max-width: 575px) {
+  .tweet__account-metrics.xs > li {
+    font-size: 0.6rem;
+  }
 }

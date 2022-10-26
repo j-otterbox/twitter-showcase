@@ -4,37 +4,9 @@ const fakeResponse = {
   data: {
     tweets: [
       {
-        id: "1583581917839966208",
-        created_at: "2022-10-21T22:12:05.000Z",
-        text: "RT @morethanmySLE: NEVER FORGET: When Barack Obama was President, Mitch McConnell BLOCKED President Obama from having nomination hearings f…",
-        public_metrics: {
-          retweet_count: 56,
-          reply_count: 0,
-          like_count: 0,
-          quote_count: 0,
-        },
-        account: {
-          username: "grateful14u",
-          profile_image_url:
-            "https://pbs.twimg.com/profile_images/1387394016464019457/br9SfMEA_normal.jpg",
-          verified: false,
-          name: "Angela D. Lemke 💙",
-          created_at: "2012-07-26T18:43:09.000Z",
-          description:
-            "Proud CEO of True Guidance, NFP @trulyguide and coming soon, TG presents @healthy14u2 located as near to the Obama Presidential Center as possible.",
-          id: "718531789",
-          public_metrics: {
-            followers_count: 462,
-            following_count: 2089,
-            tweet_count: 139422,
-            listed_count: 3,
-          },
-        },
-      },
-      {
-        id: "1583581914278993920",
-        created_at: "2022-10-21T22:12:04.000Z",
-        text: "@D2theM2theH @dopey_cchtm @ProjectLincoln @January6thCmte He chose to. He didn't have to. The President doesn't report to Congress. Read the Constitution. Would you have been OK if Congress subpoenaed Obama for Benghazi or something else?Not unless you want to live in a banana republic where we prosecute people for political reasons. 👋",
+        id: "1585139638150144000",
+        created_at: "2022-10-26T05:21:54.000Z",
+        text: "The Eritrean army is conducting house-to-house search, and killing any male above the age of seven.\n42 male children and young adults have been killed on Saturday and Sunday, and the killings have continued. #EritreaOutOfTigray @HolocaustMuseum\n@GGaile3\nhttps://t.co/6ukrjGQKCs… https://t.co/yTt5DuC1JJ",
         public_metrics: {
           retweet_count: 0,
           reply_count: 0,
@@ -42,219 +14,54 @@ const fakeResponse = {
           quote_count: 0,
         },
         account: {
-          username: "WoodyHayesTOSU",
+          created_at: "2022-09-26T21:42:00.000Z",
+          id: "1574514433031905280",
+          name: "Gal Haile3",
           profile_image_url:
-            "https://pbs.twimg.com/profile_images/1581748133721169921/Zz-XmJGh_normal.jpg",
-          verified: false,
-          name: "Lord BW 🇪🇨",
-          created_at: "2016-09-23T22:47:47.000Z",
-          description:
-            "Exiled from Ohio, Demographer, Generation X, Army Vet, BGSU. \n\nPronoun: His Lordship.",
-          id: "779452226930511872",
-          public_metrics: {
-            followers_count: 401,
-            following_count: 167,
-            tweet_count: 29872,
-            listed_count: 7,
-          },
-        },
-      },
-      {
-        id: "1583581911330754564",
-        created_at: "2022-10-21T22:12:03.000Z",
-        text: "RT @GuntherEagleman: It was Barack Obama who created this era of Hate and Racism from the left.",
-        public_metrics: {
-          retweet_count: 1780,
-          reply_count: 0,
-          like_count: 0,
-          quote_count: 0,
-        },
-        account: {
-          username: "usaaaa2022",
-          profile_image_url:
-            "https://pbs.twimg.com/profile_images/1347754407451090946/D2TQTWWe_normal.jpg",
-          verified: false,
-          name: "gwenn",
-          created_at: "2012-11-23T23:12:27.000Z",
-          description: "Trump 2020💥🎊🎉 #AmericaFirst, #MAGA, 🇺🇸🇺🇸🇺🇸 ❤️✝️✝️✝️",
-          id: "967007887",
-          public_metrics: {
-            followers_count: 796,
-            following_count: 1160,
-            tweet_count: 35851,
-            listed_count: 3,
-          },
-        },
-      },
-      {
-        id: "1583581906238869505",
-        created_at: "2022-10-21T22:12:02.000Z",
-        text: "Great job Hillary and Obama https://t.co/Lb8nRdVzxy",
-        public_metrics: {
-          retweet_count: 0,
-          reply_count: 0,
-          like_count: 0,
-          quote_count: 0,
-        },
-        account: {
-          username: "KeithErrday",
-          profile_image_url:
-            "https://pbs.twimg.com/profile_images/1574548419363864597/Mp5IlCVw_normal.jpg",
-          verified: false,
-          name: "Yur",
-          created_at: "2009-07-11T04:18:13.000Z",
+            "https://pbs.twimg.com/profile_images/1579225403624923137/pXhNywjB_normal.jpg",
+          username: "GGaile3",
           description: "",
-          id: "55755570",
-          public_metrics: {
-            followers_count: 403,
-            following_count: 533,
-            tweet_count: 1464,
-            listed_count: 5,
-          },
-        },
-      },
-      {
-        id: "1583581903415754752",
-        created_at: "2022-10-21T22:12:01.000Z",
-        text: "@TJSharky @SamMarlow79 @jadam146 @JoshKraushaar True. Notwithstanding, in the same poll, they’re tied with RV. That tells me an insane turnout election will favor Barnes. That’s why you rightly said they were having Obama visit. Anything can happen tbh, but definitely, Johnson has the advantage.",
-        public_metrics: {
-          retweet_count: 0,
-          reply_count: 0,
-          like_count: 0,
-          quote_count: 0,
-        },
-        account: {
-          username: "EthanHiguain",
-          profile_image_url:
-            "https://pbs.twimg.com/profile_images/1441887214451892224/mZpSeHjy_normal.jpg",
           verified: false,
-          name: "Ibe",
-          created_at: "2010-06-02T00:48:06.000Z",
-          description: "",
-          id: "150858057",
           public_metrics: {
-            followers_count: 115,
-            following_count: 503,
-            tweet_count: 6612,
+            followers_count: 673,
+            following_count: 1225,
+            tweet_count: 48934,
             listed_count: 0,
           },
         },
       },
       {
-        id: "1583581898202193920",
-        created_at: "2022-10-21T22:12:00.000Z",
-        text: 'RT @AndrewJBates46: .@POTUS\'s "approval rating puts him in better standing" at this point in office "than 5 of his predecessors over the pa…',
+        id: "1585139636409888770",
+        created_at: "2022-10-26T05:21:54.000Z",
+        text: "RT @ChristFun: 2 Samuel 6:14 And David danced before the LORD with all [his] might; and David [was] girded with a linen ephod. \nWe are Danc…",
         public_metrics: {
-          retweet_count: 304,
+          retweet_count: 2,
           reply_count: 0,
           like_count: 0,
           quote_count: 0,
         },
         account: {
-          username: "AmySandSand",
+          created_at: "2010-02-27T09:53:35.000Z",
+          id: "118017156",
+          name: "Kajambiya",
           profile_image_url:
-            "https://pbs.twimg.com/profile_images/1466033060860903430/Ukr15WRn_normal.jpg",
-          verified: false,
-          name: "Amy 🌻",
-          created_at: "2021-08-14T15:17:26.000Z",
+            "https://pbs.twimg.com/profile_images/1248689214469832711/x-EoEWfG_normal.jpg",
+          username: "kajambiyamusic",
           description:
-            "Democrat Straight up Establishment No Racism or Hate! Save our Democracy! VOTE BLUE. NO EXCUSE typo-Queen. 🐝",
-          id: "1426563572675584005",
-          public_metrics: {
-            followers_count: 930,
-            following_count: 1222,
-            tweet_count: 78430,
-            listed_count: 1,
-          },
-        },
-      },
-      {
-        id: "1583581898172817409",
-        created_at: "2022-10-21T22:12:00.000Z",
-        text: "RT @BarbraStreisand: Covid is still with us so be careful. The situation is better thanks to vaccines and therapies. But remember that Trum…",
-        public_metrics: {
-          retweet_count: 83,
-          reply_count: 0,
-          like_count: 0,
-          quote_count: 0,
-        },
-        account: {
-          username: "paulwolfnj",
-          profile_image_url:
-            "https://pbs.twimg.com/profile_images/1452683629310656518/og4zvcAc_normal.jpg",
+            "Gospel Minister |\nGeek |\nBorn Again Christian | @LFC |\n#SeedOfApostleGraceLubega\nhttps://t.co/T8yo1zAlXl",
           verified: false,
-          name: "Paul Wolf",
-          created_at: "2011-11-04T02:49:12.000Z",
-          description:
-            "Screen writer set to compose a new chapter in his life.",
-          id: "404556571",
           public_metrics: {
-            followers_count: 244,
-            following_count: 168,
-            tweet_count: 28555,
-            listed_count: 0,
+            followers_count: 4094,
+            following_count: 435,
+            tweet_count: 7831,
+            listed_count: 8,
           },
         },
       },
       {
-        id: "1583581892401541120",
-        created_at: "2022-10-21T22:11:59.000Z",
-        text: "RT @Fla_Pol: .@BarackObama embraces @CharlieCrist for Governor in video endorsement\n\nReporting by @RenzoDowney\n\nhttps://t.co/Tt68Tr4vNd\n\n#F…",
-        public_metrics: {
-          retweet_count: 166,
-          reply_count: 0,
-          like_count: 0,
-          quote_count: 0,
-        },
-        account: {
-          username: "jymbo916",
-          profile_image_url:
-            "https://pbs.twimg.com/profile_images/1545976671295004672/TCgNmEx2_normal.jpg",
-          verified: false,
-          name: "Jim",
-          created_at: "2011-10-26T19:56:10.000Z",
-          description:
-            "Liberal, gay and happily married guy enjoying my life in California. Love to chat politics, healthcare and animal welfare! VOTE!🐝",
-          id: "398959876",
-          public_metrics: {
-            followers_count: 2082,
-            following_count: 3880,
-            tweet_count: 323827,
-            listed_count: 30,
-          },
-        },
-      },
-      {
-        id: "1583581891332313091",
-        created_at: "2022-10-21T22:11:59.000Z",
-        text: "RT @DineshDSouza: Obama is in hot water.\nhttps://t.co/QePmfh0edw",
-        public_metrics: {
-          retweet_count: 431,
-          reply_count: 0,
-          like_count: 0,
-          quote_count: 0,
-        },
-        account: {
-          username: "ChrisCornwell17",
-          profile_image_url:
-            "https://pbs.twimg.com/profile_images/1141372580605104129/IBTa7llQ_normal.jpg",
-          verified: false,
-          name: "Cris Wells",
-          created_at: "2019-06-19T15:47:54.000Z",
-          description: "Find people to be interestingly deceitful",
-          id: "1141372037119823872",
-          public_metrics: {
-            followers_count: 355,
-            following_count: 206,
-            tweet_count: 20776,
-            listed_count: 1,
-          },
-        },
-      },
-      {
-        id: "1583581890556366850",
-        created_at: "2022-10-21T22:11:58.000Z",
-        text: "@catturd2 @CharlieCrist @BarackObama #obama loves #gillum right #florida https://t.co/P63064telH",
+        id: "1585139631561269251",
+        created_at: "2022-10-26T05:21:53.000Z",
+        text: "@jayjoe3k anyways you gotta take a shot to get in the door saturday.",
         public_metrics: {
           retweet_count: 0,
           reply_count: 0,
@@ -262,29 +69,229 @@ const fakeResponse = {
           quote_count: 0,
         },
         account: {
-          username: "BonfireDesigns2",
+          created_at: "2017-03-04T19:14:14.000Z",
+          id: "838105320358559744",
+          name: "lovee",
           profile_image_url:
-            "https://pbs.twimg.com/profile_images/1558193171829489664/WMNWG6sR_normal.jpg",
+            "https://pbs.twimg.com/profile_images/1584603707781664769/inBe4hCz_normal.jpg",
+          username: "prettyasslovee",
+          description: "ms. pretty || IG: prettyasslovely",
           verified: false,
-          name: "BonfireDesigns",
-          created_at: "2022-04-27T16:49:41.000Z",
-          description:
-            "Love For Family, My Pets and America Fire Captain For 20 Years President Trump Love Forever 🇺🇸🇺🇸❤️❤️Small Business Designer bonfiredesigns@aol.com",
-          id: "1519358064125779968",
           public_metrics: {
-            followers_count: 165,
-            following_count: 479,
-            tweet_count: 6455,
+            followers_count: 5240,
+            following_count: 3914,
+            tweet_count: 32863,
+            listed_count: 3,
+          },
+        },
+      },
+      {
+        id: "1585139622639996928",
+        created_at: "2022-10-26T05:21:51.000Z",
+        text: "RT @tdfTigray8: The Eritrean army is conducting house-to-house search, and killing any male above the age of seven.\n42 male children and yo…",
+        public_metrics: {
+          retweet_count: 32,
+          reply_count: 0,
+          like_count: 0,
+          quote_count: 0,
+        },
+        account: {
+          created_at: "2022-02-18T00:14:46.000Z",
+          id: "1494465214326136833",
+          name: "Meron Gebrekidan",
+          profile_image_url:
+            "https://pbs.twimg.com/profile_images/1583948465180139520/-7PD4ETn_normal.jpg",
+          username: "MeronGebrekida5",
+          description: "I miss you my family (seloma)ሃገረይ ዓበይ ትግራይ",
+          verified: false,
+          public_metrics: {
+            followers_count: 419,
+            following_count: 98,
+            tweet_count: 105486,
+            listed_count: 0,
+          },
+        },
+      },
+      {
+        id: "1585139618361782272",
+        created_at: "2022-10-26T05:21:50.000Z",
+        text: "RT @alleiahbear: dlsu vs adu and f2 vs petro gazz on Saturday 😃 good luck lumot nation sana kayanin natin 🤧",
+        public_metrics: {
+          retweet_count: 21,
+          reply_count: 0,
+          like_count: 0,
+          quote_count: 0,
+        },
+        account: {
+          created_at: "2015-09-25T12:10:35.000Z",
+          id: "3681301219",
+          name: "trish 🥑🥑🥑",
+          profile_image_url:
+            "https://pbs.twimg.com/profile_images/1578798125749530625/3cLiuj7l_normal.jpg",
+          username: "trishccoronel",
+          description: "grateful ✨",
+          verified: false,
+          public_metrics: {
+            followers_count: 444,
+            following_count: 438,
+            tweet_count: 21235,
             listed_count: 1,
+          },
+        },
+      },
+      {
+        id: "1585139615383826433",
+        created_at: "2022-10-26T05:21:49.000Z",
+        text: "Saturday 12pm-7pm💋💋\n📍23803 104th Ave SE Kent, WA https://t.co/2vTjhUr5PP",
+        public_metrics: {
+          retweet_count: 0,
+          reply_count: 0,
+          like_count: 0,
+          quote_count: 0,
+        },
+        account: {
+          created_at: "2016-05-30T14:04:19.000Z",
+          id: "737283502635261953",
+          name: "Mariah",
+          profile_image_url:
+            "https://pbs.twimg.com/profile_images/1406614937745514503/93rmwLKJ_normal.jpg",
+          username: "mrosebarista",
+          description:
+            "Bikini Barista 👙☕👸🏼 a.k.a. I make coffee in my underwear 😘 Instagram: @mmerhc",
+          verified: false,
+          public_metrics: {
+            followers_count: 36121,
+            following_count: 145,
+            tweet_count: 194,
+            listed_count: 56,
           },
         },
         media: [
           {
-            media_key: "3_1583581887380979712",
+            media_key: "3_1585139606621949952",
             type: "photo",
-            url: "https://pbs.twimg.com/media/FfoDVh4WAAA4S2y.jpg",
+            url: "https://pbs.twimg.com/media/Ff-MEuQakAAUcjR.jpg",
           },
         ],
+      },
+      {
+        id: "1585139612355133441",
+        created_at: "2022-10-26T05:21:48.000Z",
+        text: "@Quellaaa_ @Latto Thanks love! I’m trying to get out of here! But I’m putting it in Gods hands! I hope he considers I have tickets to see @gucci1017 Saturday! 😂",
+        public_metrics: {
+          retweet_count: 0,
+          reply_count: 0,
+          like_count: 0,
+          quote_count: 0,
+        },
+        account: {
+          created_at: "2009-04-03T04:02:26.000Z",
+          id: "28498950",
+          name: "╰★╮|JERRICA TAYLOR!|╰★╮",
+          profile_image_url:
+            "https://pbs.twimg.com/profile_images/1581859945049374720/1b58h-bM_normal.jpg",
+          username: "JerricaSaid",
+          description:
+            "Livingstone Alumna 2015 NCCU 2022 #AdventurousAngel certified baby hair designer #bigbrother superfan and blogger",
+          verified: false,
+          public_metrics: {
+            followers_count: 738,
+            following_count: 344,
+            tweet_count: 76099,
+            listed_count: 22,
+          },
+        },
+      },
+      {
+        id: "1585139609239187456",
+        created_at: "2022-10-26T05:21:47.000Z",
+        text: "@CofRedCentral Oh We Know, We’re Gonna Be Ready for Saturday &amp; This Time We Ain’t Going Soft 😏 https://t.co/sinC3PnGuF",
+        public_metrics: {
+          retweet_count: 0,
+          reply_count: 0,
+          like_count: 0,
+          quote_count: 0,
+        },
+        account: {
+          created_at: "2019-02-06T04:51:13.000Z",
+          id: "1093009192619728896",
+          name: "BMAX64🎮",
+          profile_image_url:
+            "https://pbs.twimg.com/profile_images/1578239114398568448/Ghmkjvy4_normal.jpg",
+          username: "BMAX643",
+          description:
+            "Oilers Fan Running inside Sources on Trades/Rumours. Also Love Dank Memes and Nintendo Nostalgia. Majora’s Mask 64 Fan. #SaveCosmo",
+          verified: false,
+          public_metrics: {
+            followers_count: 195,
+            following_count: 254,
+            tweet_count: 8890,
+            listed_count: 2,
+          },
+        },
+        media: [
+          {
+            media_key: "16_1585139602322776064",
+            preview_image_url:
+              "https://pbs.twimg.com/tweet_video_thumb/Ff-MEePaYAArDTy.jpg",
+            type: "animated_gif",
+          },
+        ],
+      },
+      {
+        id: "1585139603492962305",
+        created_at: "2022-10-26T05:21:46.000Z",
+        text: "@CallMeEPJ @TeranRodriguez1 True about SC only needing to take 1 set, but only applies if Newport wins their Saturday match and throws the pool into the 3 way tie scenario.",
+        public_metrics: {
+          retweet_count: 0,
+          reply_count: 0,
+          like_count: 0,
+          quote_count: 0,
+        },
+        account: {
+          created_at: "2021-03-28T06:10:53.000Z",
+          id: "1376054064673222658",
+          name: "Blazer01",
+          profile_image_url:
+            "https://pbs.twimg.com/profile_images/1518963520263491585/4OYkXDga_normal.jpg",
+          username: "Blazer018",
+          description: "buying/selling/trading cards. PC DODGERS.",
+          verified: false,
+          public_metrics: {
+            followers_count: 3442,
+            following_count: 3670,
+            tweet_count: 7436,
+            listed_count: 8,
+          },
+        },
+      },
+      {
+        id: "1585139597729681408",
+        created_at: "2022-10-26T05:21:45.000Z",
+        text: "RT @AOC: It’s almost midnight. Welcome to political asmr Twitter \n\n🫧 NY Early Voting starts next Saturday Oct 29th 🫧 \n\n🌬️🎙️ California Earl…",
+        public_metrics: {
+          retweet_count: 2015,
+          reply_count: 0,
+          like_count: 0,
+          quote_count: 0,
+        },
+        account: {
+          created_at: "2020-03-27T23:02:46.000Z",
+          id: "1243674813111173126",
+          name: "Fynn Hasche",
+          profile_image_url:
+            "https://pbs.twimg.com/profile_images/1245495636172115968/ZMGSlSeJ_normal.jpg",
+          username: "pricharda_",
+          description:
+            "Former farm boy now tireless social justice warrior and public education reformer. I also have a r*nning problem. #SocialWork #CharterPublicSchools #LVH3 On-On!",
+          verified: false,
+          public_metrics: {
+            followers_count: 261,
+            following_count: 1379,
+            tweet_count: 1700,
+            listed_count: 0,
+          },
+        },
       },
     ],
   },

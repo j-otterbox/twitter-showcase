@@ -2,7 +2,7 @@ import "./TweetMetrics.css";
 
 const TweetMetrics = (props) => {
   return (
-    <ul className="tweet__metrics">
+    <ul className={`tweet__metrics ${props.page === "search" ? "xs" : ""}`}>
       <li>
         <span className="icon material-symbols-outlined">schedule</span>
         {props.data.displayDate}
