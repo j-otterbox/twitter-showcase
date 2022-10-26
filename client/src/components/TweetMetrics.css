@@ -6,7 +6,8 @@
 }
 
 .tweet__metrics > li {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -14,8 +15,6 @@
 .tweet__metrics .icon {
   margin-right: 4px;
   font-size: 1.2rem;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 @media only screen and (max-width: 575px) {

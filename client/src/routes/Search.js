@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import SearchInput from "../components/SearchInput";
 import "./Search.css";
-// import Tweet from "../components/Tweet";
-// import fakeResponse from "../keywords-search-data";
+import Tweet from "../components/Tweet";
+import fakeResponse from "../keywords-search-data";
 
 // three types of media: video, photo, animated_gif
 
@@ -28,9 +28,13 @@ const Search = () => {
               Make it look interesting!
             </li>
           </ul>
-          {/* {fakeResponse.data.tweets.map((tweet) => {
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6}>
+          {fakeResponse.data.tweets.map((tweet) => {
             return <Tweet key={tweet.id} data={tweet} />;
-          })} */}
+          })}
         </Col>
       </Row>
     </Container>
