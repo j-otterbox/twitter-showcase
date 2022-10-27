@@ -3,6 +3,18 @@
   justify-content: center;
 }
 
+.search__text-block {
+  margin-bottom: 64px;
+}
+
+.search__text-block > h2 {
+  text-align: center;
+}
+
+.search__text-block > p {
+  margin-bottom: 40px;
+}
+
 .tweet__card {
   margin-bottom: 48px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);

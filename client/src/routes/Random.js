@@ -25,7 +25,6 @@ const client = axios.create({
 });
 
 const Random = () => {
-  console.log("loading the random page");
   const [isLoading, setIsLoading] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const [randomTweets, setRandomTweets] = useState([]);

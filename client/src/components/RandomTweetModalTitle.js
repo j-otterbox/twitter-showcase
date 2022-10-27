@@ -2,8 +2,6 @@ import { Image, Modal } from "react-bootstrap";
 import "./RandomTweetModalTitle.css";
 
 const RandomTweetModalTitle = (props) => {
-  console.log(props.data);
-
   return (
     <Modal.Title
       id="contained-modal-title-vcenter"
