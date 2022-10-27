@@ -6,9 +6,7 @@ import { parseEntities } from "../util/entities";
 import "./Tweet.css";
 
 const Tweet = (props) => {
-  // console.log(props.data);
-
-  let tweetInnerHtml = props.data.text;
+  let tweetInnerHtml = { __html: props.data.text };
   if (props.data.entities) {
     tweetInnerHtml = parseEntities(props.data.text, props.data.entities);
   }
@@ -17,22 +15,16 @@ const Tweet = (props) => {
 
   // descriptions are optional
   if (props.data.account.description) {
-    descriptionInnerHtml = props.data.account.description;
+    descriptionInnerHtml = { __html: props.data.account.description };
 
     // and may not have entities
     if (props.data.account.entities?.description) {
       descriptionInnerHtml = parseEntities(
-        descriptionInnerHtml,
+        descriptionInnerHtml.__html,
         props.data.account.entities.description
       );
-    } else {
-      descriptionInnerHtml = {
-        __html: descriptionInnerHtml,
-      };
     }
   }
-
-  // console.log(descriptionInnerHtml);
 
   const tweetCreateDate = new Date(props.data.created_at);
   const timeSinceCreated = formatDistanceToNowStrict(tweetCreateDate, {
@@ -48,8 +40,6 @@ const Tweet = (props) => {
     displayDate: format(tweetCreateDate, "h:mm aa MMM d, yyyy"),
     ...props.data.public_metrics,
   };
-
-  console.log(descriptionInnerHtml);
 
   return (
     <Container>
@@ -67,7 +57,12 @@ const Tweet = (props) => {
                 <h4>
                   <span className="tweet__name">
                     {props.data.account.name}
-                    <span className="material-symbols-outlined">verified</span>
+
+                    {props.data.account.verified && (
+                      <span className="material-symbols-outlined">
+                        verified
+                      </span>
+                    )}
                   </span>
                   <span className="tweet__username">
                     <a

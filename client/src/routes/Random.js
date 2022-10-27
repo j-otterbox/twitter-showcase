@@ -36,7 +36,7 @@ const Random = () => {
   }, []);
 
   const loadCacheData = async () => {
-    const cache = getCache();
+    let cache = getCache();
 
     if (!cache || isExpired(cache)) {
       // create a new cache
@@ -48,18 +48,19 @@ const Random = () => {
 
       if (response.status === 200) {
         refreshCache(response.data.data);
-        setRandomTweets(response);
+        cache = getCache();
       } else {
-        // use old data or inform user that something went wrong
+        // todo: use old data or inform user that something went wrong
       }
     }
 
-    setRandomTweets(cache);
+    // cache exists or has been refreshed
+    setRandomTweets(cache.data);
     setIsLoading(false);
   };
 
   const onGetTweetBtnClick = (username) => {
-    const randomTweetsItem = randomTweets.data.find(
+    const randomTweetsItem = randomTweets.find(
       (elem) => elem.account.username.toLowerCase() === username
     );
 
@@ -73,8 +74,6 @@ const Random = () => {
 
     setTweet(selectedTweet);
     setModalShow(true);
-
-    // todo: remove focus from the button that was clicked
   };
 
   return (

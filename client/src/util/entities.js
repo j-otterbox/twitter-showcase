@@ -1,6 +1,4 @@
 export const parseEntities = (tweetText, entitiesObj) => {
-  console.log(tweetText, entitiesObj);
-
   let tweetInnerHtml = tweetText;
 
   // insert tweet entities
@@ -23,6 +21,7 @@ export const parseEntities = (tweetText, entitiesObj) => {
       }
     } else if (entityType === "hashtags") {
       for (const entity of entities) {
+        console.log(entity);
         tweetInnerHtml = tweetInnerHtml.replace(
           "#" + entity.tag,
           `<a href="https://twitter.com/search?q=%23${entity.tag}" target="_blank"

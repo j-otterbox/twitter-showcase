@@ -4,9 +4,18 @@ import { Button, Modal, Image } from "react-bootstrap";
 import RandomTweetModalTitle from "./RandomTweetModalTitle";
 import TweetMetrics from "./TweetMetrics";
 import { format, formatDistanceToNowStrict } from "date-fns";
+import { parseEntities } from "../util/entities";
 import "./RandomTweetModal.css";
 
 const RandomTweetModal = (props) => {
+  let tweetInnerHtml = { __html: props.data.text };
+
+  console.log(props.data);
+
+  if (props.data.entities) {
+    tweetInnerHtml = parseEntities(tweetInnerHtml.__html, props.data.entities);
+  }
+
   const tweetCreateDate = new Date(props.data.created_at);
   const timeSinceTweetCreated = formatDistanceToNowStrict(tweetCreateDate, {
     unit: "minute" | "second" | "hour" | "day" | "month" | "year",
@@ -24,6 +33,8 @@ const RandomTweetModal = (props) => {
     ...props.data.public_metrics,
   };
 
+  console.log(tweetInnerHtml);
+
   return (
     <Fragment>
       {ReactDOM.createPortal(
@@ -37,7 +48,7 @@ const RandomTweetModal = (props) => {
             <RandomTweetModalTitle data={titleData} />
           </Modal.Header>
           <Modal.Body>
-            <p>{props.data.text}</p>
+            <p dangerouslySetInnerHTML={tweetInnerHtml}></p>
 
             {props.data.media?.map((elem) => {
               return (
