@@ -10,8 +10,6 @@ import "./RandomTweetModal.css";
 const RandomTweetModal = (props) => {
   let tweetInnerHtml = { __html: props.data.text };
 
-  console.log(props.data);
-
   if (props.data.entities) {
     tweetInnerHtml = parseEntities(tweetInnerHtml.__html, props.data.entities);
   }
@@ -22,6 +20,7 @@ const RandomTweetModal = (props) => {
   });
 
   const titleData = {
+    id: props.data.id,
     name: props.data.account.name,
     username: props.data.account.username,
     profileImageUrl: props.data.account.profile_image_url,
@@ -32,8 +31,6 @@ const RandomTweetModal = (props) => {
     displayDate: format(tweetCreateDate, "h:mm aa MMM d, yyyy"),
     ...props.data.public_metrics,
   };
-
-  console.log(tweetInnerHtml);
 
   return (
     <Fragment>

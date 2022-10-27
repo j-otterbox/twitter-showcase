@@ -2,6 +2,8 @@ import { Image, Modal } from "react-bootstrap";
 import "./RandomTweetModalTitle.css";
 
 const RandomTweetModalTitle = (props) => {
+  console.log(props.data);
+
   return (
     <Modal.Title
       id="contained-modal-title-vcenter"
@@ -29,10 +31,19 @@ const RandomTweetModalTitle = (props) => {
             </a>
           </span>
         </h4>
-        <span className="random-tweet-modal-title__date">
-          <span className="icon material-symbols-outlined">history</span>
-          {props.data.timeSinceTweetCreated} ago
-        </span>
+        <div>
+          <span className="random-tweet-modal-title__date">
+            <span className="icon material-symbols-outlined">history</span>
+            {props.data.timeSinceTweetCreated} ago
+          </span>
+          <a
+            href={`https://twitter.com/${props.data.username}/status/${props.data.id}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="material-symbols-outlined">open_in_new</span>
+          </a>
+        </div>
       </div>
     </Modal.Title>
   );

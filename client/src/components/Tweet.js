@@ -78,6 +78,13 @@ const Tweet = (props) => {
                   <span className="material-symbols-outlined">history</span>
                   {timeSinceCreated} ago
                 </span>
+                <a
+                  href={`https://twitter.com/${props.data.account.username}/status/${props.data.id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="material-symbols-outlined">open_in_new</span>
+                </a>
               </div>
 
               {descriptionInnerHtml && (
