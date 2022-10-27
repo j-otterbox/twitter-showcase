@@ -1,13 +1,28 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import SearchInput from "../components/SearchInput";
-import "./Search.css";
 import Tweet from "../components/Tweet";
+import axios from "axios";
+import "./Search.css";
+
 import fakeResponse from "../keywords-search-data";
 
-// three types of media: video, photo, animated_gif
+const client = axios.create({
+  baseURL: "http://localhost:3080",
+});
 
 const Search = () => {
+  const onSearchFormSubmit = (input) => {
+    const isValidTwitterHandle = /^@(\w){1,15}$/.test(input.trim());
+    const params = encodeURIComponent(input.trim());
+
+    const query = `/api/tweets/search?${
+      isValidTwitterHandle ? "username" : "keywords"
+    }=${params}`;
+
+    // make the request, handle the response appropriately
+  };
+
   return (
     <Container>
       <Row className="search__row">
@@ -19,9 +34,9 @@ const Search = () => {
               preceded by the @ symbol or simply entering in the content you
               wish to find. For example, @alyankovic will return only content
               authored by Weird Al, but alyankovic will return <em>any</em>{" "}
-              content from all users that contains the search query.
+              content from all users that include the search term(s).
             </p>
-            <SearchInput />
+            <SearchInput onSearchFormSubmit={onSearchFormSubmit} />
           </div>
         </Col>
       </Row>
