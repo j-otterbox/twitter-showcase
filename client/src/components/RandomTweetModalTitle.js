@@ -31,7 +31,7 @@ const RandomTweetModalTitle = (props) => {
             </a>
           </span>
         </h4>
-        <div>
+        <div className="random-tweet-modal-title__secondary-row">
           <span className="random-tweet-modal-title__date">
             <span className="icon material-symbols-outlined">history</span>
             {props.data.timeSinceTweetCreated} ago
@@ -41,7 +41,7 @@ const RandomTweetModalTitle = (props) => {
             target="_blank"
             rel="noreferrer"
           >
-            <span className="material-symbols-outlined">open_in_new</span>
+            <span className="icon material-symbols-outlined">open_in_new</span>
           </a>
         </div>
       </div>
