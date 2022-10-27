@@ -65,7 +65,7 @@ const getQueryString = (params, searchType) => {
     query = encodeURIComponent(params);
   }
 
-  return `recent?query=${query}&expansions=author_id,attachments.media_keys&user.fields=created_at,description,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,public_metrics&media.fields=preview_image_url,url`;
+  return `recent?query=${query}&expansions=author_id,attachments.media_keys&user.fields=created_at,description,entities,name,profile_image_url,public_metrics,username,verified&tweet.fields=created_at,entities,public_metrics&media.fields=preview_image_url,url`;
 };
 
 const formatSearchResponse = (twitterAPIResponse, searchType) => {
@@ -82,6 +82,7 @@ const formatSearchResponse = (twitterAPIResponse, searchType) => {
       id: tweet.id,
       created_at: tweet.created_at,
       text: tweet.text,
+      entities: tweet.entities,
       public_metrics: tweet.public_metrics,
     };
 

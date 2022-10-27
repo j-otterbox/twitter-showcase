@@ -2,9 +2,38 @@ import { Image, Container, Row, Col } from "react-bootstrap";
 import TweetMetrics from "./TweetMetrics";
 import AccountMetrics from "./AccountMetrics";
 import { format, formatDistanceToNowStrict } from "date-fns";
+import { parseEntities } from "../util/entities";
 import "./Tweet.css";
 
 const Tweet = (props) => {
+  // console.log(props.data);
+
+  let tweetInnerHtml = props.data.text;
+  if (props.data.entities) {
+    tweetInnerHtml = parseEntities(props.data.text, props.data.entities);
+  }
+
+  let descriptionInnerHtml;
+
+  // descriptions are optional
+  if (props.data.account.description) {
+    descriptionInnerHtml = props.data.account.description;
+
+    // and may not have entities
+    if (props.data.account.entities?.description) {
+      descriptionInnerHtml = parseEntities(
+        descriptionInnerHtml,
+        props.data.account.entities.description
+      );
+    } else {
+      descriptionInnerHtml = {
+        __html: descriptionInnerHtml,
+      };
+    }
+  }
+
+  // console.log(descriptionInnerHtml);
+
   const tweetCreateDate = new Date(props.data.created_at);
   const timeSinceCreated = formatDistanceToNowStrict(tweetCreateDate, {
     unit: "minute" | "second" | "hour" | "day" | "month" | "year",
@@ -19,6 +48,8 @@ const Tweet = (props) => {
     displayDate: format(tweetCreateDate, "h:mm aa MMM d, yyyy"),
     ...props.data.public_metrics,
   };
+
+  console.log(descriptionInnerHtml);
 
   return (
     <Container>
@@ -54,14 +85,14 @@ const Tweet = (props) => {
                 </span>
               </div>
 
-              {props.data.account.description && (
-                <p>{props.data.account.description}</p>
+              {descriptionInnerHtml && (
+                <p dangerouslySetInnerHTML={descriptionInnerHtml}></p>
               )}
 
               <AccountMetrics page="search" data={accountMetrics} />
             </div>
             <div className="tweet__body">
-              <p>{props.data.text}</p>
+              <p dangerouslySetInnerHTML={tweetInnerHtml}></p>
 
               {props.data.media?.map((elem) => {
                 return (
