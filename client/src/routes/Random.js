@@ -21,6 +21,7 @@ const users = [
 ];
 
 const client = axios.create({
+  baseURL: process.env.URL,
   timeout: 5000,
 });
 
