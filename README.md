@@ -10,8 +10,8 @@ Try it [here](https://papaya-jalebi-21db43.netlify.app/)
 
 <br>
 
-![Twitter Showcase Search Demo](https://github.com/j-otterbox/star-wars-api/blob/main/starwars-api-demo.gif "Twitter Showcase search function in use")
-![Twitter Showcase Random Demo](https://github.com/j-otterbox/star-wars-api/blob/main/starwars-api-demo.gif "Twitter Showcase random function in use")
+![Twitter Showcase Search Demo](https://github.com/j-otterbox/twitter-showcase/blob/main/twitter-showcase-search-demo.gif "Twitter Showcase search function in use")
+![Twitter Showcase Random Demo](https://github.com/j-otterbox/twitter-showcase/blob/main/twitter-showcase-random-demo.gif "Twitter Showcase random function in use")
 
 ## Summary
 
