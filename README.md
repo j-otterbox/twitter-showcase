@@ -21,7 +21,7 @@ This was a very challenging project. Twitter's API documentation is quite extens
 
 There were many tweaks and adjustments as the project took shape. The most difficult part was turning the original data in the Twitter API response into more usable form. For example, media in Twitter's API is stored separately from the tweet in which it's embedded but the tweet has the IDs of the media entities. I was able to solve this problem with some ES6 features like the spread operator to create logical groupings that keep all relevant data together and much easier to pass to a Tweet component in the client.
 
-Some features from past projects were also implemented here as well, on the random page for instance. Since the list of users to get random tweets from is static and its likely that they aren't tweeting every second of every day, the data for this page's functionality is cached to reduce the amount of requests made.
+Some features from past projects were also implemented here as well, on the random page for instance. Since the list of users to get random tweets from is static and its likely that they aren't tweeting every second of every day, the data for this page's functionality is cached and only updated when it expires to reduce the amount of requests made.
 
 Overall, this was a challenging project, but it was also very fun. A big part of what makes development interesting is testing your abilities and solving new problems.
 
