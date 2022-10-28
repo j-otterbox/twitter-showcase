@@ -2,7 +2,7 @@
 
 <br>
 
-_An application for searching Twitter built with the React and Node_
+_An application for searching Twitter built with React and Node_
 
 <br>
 
