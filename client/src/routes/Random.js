@@ -21,7 +21,6 @@ const users = [
 ];
 
 const client = axios.create({
-  baseURL: "http://localhost:3080",
   timeout: 5000,
 });
 
