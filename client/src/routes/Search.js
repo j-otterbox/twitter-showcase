@@ -8,6 +8,7 @@ import "./Search.css";
 import LoadingOverlay from "../components/LoadingOverlay";
 
 const client = axios.create({
+  baseURL: "http://localhost:3080",
   timeout: 5000,
 });
 
