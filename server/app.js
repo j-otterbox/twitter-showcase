@@ -99,4 +99,4 @@ app.use((req, res) => {
   });
 });
 
-app.listen(3080);
+app.listen(process.env.PORT || 3080);
